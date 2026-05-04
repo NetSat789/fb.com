@@ -1,0 +1,9 @@
+test_id,description,email,password,expected_result,expected_message,test_type
+TC_LOGIN_001,Valid login with correct credentials,testuser@example.com,Test@1234,login_success,,positive
+TC_LOGIN_002,Invalid login with wrong password,testuser@example.com,WrongPassword,login_failure,The password that you've entered is incorrect,negative
+TC_LOGIN_003,Invalid login with unregistered email,unregistered@example.com,Test@1234,login_failure,The email address or mobile number you entered isn't connected to an account,negative
+TC_LOGIN_004,Login with empty email field,,Test@1234,validation_error,,negative
+TC_LOGIN_005,Login with empty password field,testuser@example.com,,validation_error,,negative
+TC_LOGIN_006,Login with both fields empty,,,validation_error,,negative
+TC_LOGIN_007,Login with invalid email format,invalid-email-format,Test@1234,login_failure,,negative
+TC_LOGIN_008,Login with SQL injection attempt,' OR '1'='1,' OR '1'='1,login_failure,,security

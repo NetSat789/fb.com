@@ -1,0 +1,74 @@
+[
+    {
+        "test_id": "TC_LOGIN_001",
+        "description": "Valid login with correct credentials",
+        "email": "testuser@example.com",
+        "password": "Test@1234",
+        "expected_result": "login_success",
+        "expected_message": "",
+        "test_type": "positive"
+    },
+    {
+        "test_id": "TC_LOGIN_002",
+        "description": "Invalid login with wrong password",
+        "email": "testuser@example.com",
+        "password": "WrongPassword",
+        "expected_result": "login_failure",
+        "expected_message": "The password that you've entered is incorrect",
+        "test_type": "negative"
+    },
+    {
+        "test_id": "TC_LOGIN_003",
+        "description": "Invalid login with unregistered email",
+        "email": "unregistered@example.com",
+        "password": "Test@1234",
+        "expected_result": "login_failure",
+        "expected_message": "The email address or mobile number you entered isn't connected to an account",
+        "test_type": "negative"
+    },
+    {
+        "test_id": "TC_LOGIN_004",
+        "description": "Login with empty email field",
+        "email": "",
+        "password": "Test@1234",
+        "expected_result": "validation_error",
+        "expected_message": "",
+        "test_type": "negative"
+    },
+    {
+        "test_id": "TC_LOGIN_005",
+        "description": "Login with empty password field",
+        "email": "testuser@example.com",
+        "password": "",
+        "expected_result": "validation_error",
+        "expected_message": "",
+        "test_type": "negative"
+    },
+    {
+        "test_id": "TC_LOGIN_006",
+        "description": "Login with both fields empty",
+        "email": "",
+        "password": "",
+        "expected_result": "validation_error",
+        "expected_message": "",
+        "test_type": "negative"
+    },
+    {
+        "test_id": "TC_LOGIN_007",
+        "description": "Login with invalid email format",
+        "email": "invalid-email-format",
+        "password": "Test@1234",
+        "expected_result": "login_failure",
+        "expected_message": "",
+        "test_type": "negative"
+    },
+    {
+        "test_id": "TC_LOGIN_008",
+        "description": "Login with SQL injection attempt",
+        "email": "' OR '1'='1",
+        "password": "' OR '1'='1",
+        "expected_result": "login_failure",
+        "expected_message": "",
+        "test_type": "security"
+    }
+]

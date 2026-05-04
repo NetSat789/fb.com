@@ -1,0 +1,16 @@
+# Environments
+venv/
+env/
+.env
+
+# Pytest & Coverage
+.pytest_cache/
+reports/
+screenshots/
+__pycache__/
+*.pyc
+
+# IDEs
+.vscode/
+.idea/
+*.swp
